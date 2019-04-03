@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bigdata parser</title>
+</head>
+<body>
+    Input<br />
+	
+	<input type="text" id="bigdata" name="bigdata" style="text-align:left; width:800px; height:20px; letter-spacing: 1px"/>
+	<input type="button" id="button1" onclick="button1_click();" value="Run" />
+	<br/>
+	<br/>
+	Output<br/>
+
+	<textarea id="output" rows="25" cols="150"></textarea>
+
+</body>
+
+<script type="text/javascript">
+
+	var grades = {
+		'CAUSE': 'DISCONNECT', 
+		'ACT': 'LTE', 
+		'REASON': 'MUTE'
+		};
+	
+	
+	//var id = $('#exam').val();
+	//var jbStr = "Hello worlld Lo";
+	//var jbMatch = jbStr.match( /Lo\w+/ );
+	//var jbMatch = jbStr.match( /ell(?<value>\w) / );
+	//alert('[' + jbMatch[1] + ']');
+	//alert('[' + jbMatch[1] + ']');	
+	
+	
+	// var tmp = document.getElementsByName('exam')[0].value; 
+	// var tmp = document.getElementById('exam').value; 
+	// form은 폼명 
+	// vat tmp = document.form.exam[0].value; 
+	// tmp = $("#exam").get(0).value; 
+	// JQuery 방식 
+	// tmp = $("#exam").val(); 
+	// 태그 내 value값 가져오기
+
+	function button1_click() {
+		//alert("버튼1을 누르셨습니다.");
+		//var id = $('#bigdata').val();
+		var input = document.getElementById("bigdata").value;
+
+		//alert('[' + input + ']');
+		
+		var jbMatch = input.match(/JVER (?<value>\w+) \d/);
+		var output = jbMatch[1];
+		alert('[' + output + ']');
+		
+		var cause = grades[output];
+		document.getElementById("output").value = cause;
+	}
+</script>
+
+</html>
