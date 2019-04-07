@@ -1,0 +1,50 @@
+<html>
+    <head>   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <button id="test">버튼 1</button>
+        </br>
+    </br>
+        <button onclick="openTextFile()">Open</button>
+        <div id='output'>...</div>
+    </body>
+</html>
+<script>
+    $('#test').on('click',function() {
+        alert('HI!');
+    });
+
+    function openTextFile() {
+        var input = document.createElement("input");
+    
+        input.type = "file";
+        input.accept = "text/plain";
+    
+        input.onchange = function (event) {
+            processFile(event.target.files[0]);
+        };
+    
+        input.click();
+    }
+ 
+    function processFile(file) {
+        var reader = new FileReader();
+    
+        reader.onload = function () {
+            //output.innerText = reader.result;
+            output.innerText = removeBlank(reader.result);
+        };
+    
+        //reader.readAsText(file, /* optional */ "euc-kr");
+        reader.readAsText(file, /* optional */ "utf8");
+    }
+
+    function removeBlank(data){ 
+        //data = data.replace(/\r\n/g, "");//행바꿈제거
+        data = data.replace(/(\s*)/g, "");  //모든 공백 제거
+        //data = data.replace(/\r/g, "");//엔터제거
+        return data;
+    } 
+</script>
