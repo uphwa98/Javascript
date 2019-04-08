@@ -1,0 +1,33 @@
+<style type="text/css">
+	div {
+		margin: 10px 0px;
+		text-align: center;
+		font-family: Consolas, monospace;
+		font-style: italic;
+		font-size: 20px;
+	}
+	.a {
+		border: 4px dashed #bcbcbc;
+	}
+	.b {
+		border: thick dotted #f44336;
+	}
+	.c {
+		border: 5pt groove #3f51b5;
+	}
+	.d {
+		border: 0.4em inset #009688;
+	}
+	.e {
+		border: 5px ridge #ff5722;
+	}
+	
+	p {
+		line-height: 30%;
+		margin-left:2em;
+	}
+	.font_red {
+		color: red;
+		font-size : 20px;
+	}
+ </style>
