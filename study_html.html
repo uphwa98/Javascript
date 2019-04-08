@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bigdata parser</title>
+	
+	<link rel="stylesheet" href="border.css"> 
+</head>
+<body>
+    <H3>Input</H3>
+	
+	<input type="text" id="bigdata" name="bigdata" style="text-align:left; width:800px; height:20px; letter-spacing: 1px"/>
+	<input type="button" id="button1" onclick="button1_click();" value="Run" />
+	<br/>
+	<br/>
+	Output<br/>
+
+	<textarea id="output" rows="2" cols="150"></textarea>
+
+	<br/>
+	
+	<div id="drop_zone" class="d">Drop files here</div>
+
+<!--	
+	<input type="file" id="files" name="files[]" multiple />
+	-->
+	<output id="list"></output>
+	
+</body>
+
+<script type="text/javascript">
+	var count = 0;
+	function button1_click() {
+		if (window.File && window.FileReader && window.FileList && window.Blob) {
+			//alert('The File APIs are supported in this browser.');
+		} else {
+			alert('The File APIs are not fully supported in this browser.');
+		}
+
+
+		//alert("버튼1을 누르셨습니다.");
+		//var id = $('#bigdata').val();
+		var input = document.getElementById("drop_zone");
+
+		input.innerHTML = "<strong>Fighting " + count + "</strong><p>행복하세요" +
+		"You have the whole afternoon to play, but I need to see a clean plate first, okay?<p>" +
+		"You have the whole afternoon to play, but I need to see a clean plate first, okay?<p>" +
+		"I'm already so proud of you.<p>" +
+		"High fiber with a smooth grassy flavor.<p>" +
+		'But know this I will collect.<p class="font_red">' +
+		"<a name='jangmi'>Your baby brother likes green beans.<p>" +
+		"But know this I will collect.<p>" +
+		"High fiber with a smooth grassy flavor.<p>" +
+		"<a href='#jangmi'>장미 구경하세요</a>" +
+		"I'm already so proud of you.<p>" +
+		"End<a href='study_html.html#jangmi'>장미 구경하세요</a>";
+		count++;
+	}
+</script>
+
+</html>
